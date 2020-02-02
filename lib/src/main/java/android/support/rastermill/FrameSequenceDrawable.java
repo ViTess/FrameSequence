@@ -217,7 +217,7 @@ public class FrameSequenceDrawable extends Drawable implements Animatable, Runna
                 } else if (mNextFrameToDecode >= 0 && mState == STATE_DECODING) {
                     schedule = true;
                     mNextSwap = exceptionDuringDecode ? Long.MAX_VALUE : invalidateTimeMs + mLastSwap;
-                    //TODO:fixed()
+                    //TODO:fixed(https://blog.csdn.net/yy958836746/article/details/100015518)
 //                    mNextSwap = exceptionDuringDecode ? Long.MAX_VALUE : invalidateTimeMs + SystemClock.uptimeMillis();
                     mState = STATE_WAITING_TO_SWAP;
                 }

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4.1)
 
 project("webp")
 
-SET(CMAKE_C_FLAGS "-O2 -DANDROID -DWEBP_SWAP_16BIT_CSP -DWEBP_USE_THREAD -Wall -Werror")
+SET(CMAKE_C_FLAGS "-O3 -DANDROID -DWEBP_SWAP_16BIT_CSP -DWEBP_USE_THREAD -Wall -Werror")
 
 #include_directories(${PROJECT_SOURCE_DIR}/include/webp)
 #include_directories(${PROJECT_SOURCE_DIR}/src/dec)
