@@ -2,12 +2,8 @@ cmake_minimum_required(VERSION 3.4.1)
 
 project("webp")
 
-#继承上一层的CMakeLists.txt的变量，也可以在这里重新赋值
-#C 的编译选项是 CMAKE_C_FLAGS
-# 指定编译参数，可选
 SET(CMAKE_C_FLAGS "-O2 -DANDROID -DWEBP_SWAP_16BIT_CSP -DWEBP_USE_THREAD -Wall -Werror")
 
-# 配置头文件
 #include_directories(${PROJECT_SOURCE_DIR}/include/webp)
 #include_directories(${PROJECT_SOURCE_DIR}/src/dec)
 #include_directories(${PROJECT_SOURCE_DIR}/src/demux)
@@ -22,7 +18,6 @@ include_directories(src/mux)
 include_directories(src/utils)
 include_directories(src/webp)
 
-#生成动态库名称、类型、资源文件
 add_library(webp-decode
 
         SHARED
@@ -89,8 +84,3 @@ add_library(webp-decode
         src/utils/rescaler_utils.c
         src/utils/thread_utils.c
         src/utils/utils.c)
-
-#依赖库
-#find_library(log-lib log)
-#
-#target_link_libraries(one ${log-lib})

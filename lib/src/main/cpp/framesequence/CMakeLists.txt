@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 3.4.1)
 
 project("framesequence")
 
-#继承上一层的CMakeLists.txt的变量，也可以在这里重新赋值
-#C 的编译选项是 CMAKE_C_FLAGS
-# 指定编译参数，可选
 SET(CMAKE_C_FLAGS "-Wall -Werror -Wno-unused-parameter -Wno-unused-variable -Wno-overloaded-virtual -fvisibility=hidden")
 
 include_directories(utils)
@@ -26,7 +23,7 @@ add_library(framesequence
         Registry.cpp
         Stream.cpp)
 
-#依赖库
+#
 find_library(log-lib log)
 find_library(jnigraphics-lib jnigraphics)
 LINK_DIRECTORIES(${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
